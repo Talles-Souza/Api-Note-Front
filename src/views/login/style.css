@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #ffff;
+    background-color: var(--branco);
 }
 
 .first-row {
@@ -86,13 +86,13 @@
 }
 
 .form-container .bottom-col .signUp-btn {
-    color: #ffff;
+    color: var(--branco);
     font-size: 130%;
     width: 65%;
     height: 25%;
     border: none;
     border-radius: 50px;
-    background-color: #9D4EDD;
+    background-color:var(--roxo);
     cursor: pointer;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .signIn-btn {
-    color: black;
+    color: var(--preto);
     flex-wrap: wrap;
     font-weight: 600;
     cursor: pointer;
@@ -115,7 +115,7 @@
 
 
 .container-sign-up .form-container .error {
-    color: red;
+    color:var(--vermelho);
     align-self: baseline;
     font-size: 110%;
     
