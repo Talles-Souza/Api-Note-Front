@@ -1,0 +1,122 @@
+.container-global {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../../assets/login/login.png");
+}
+
+.container-sign-up {
+    width: 30%;
+    height: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffff;
+}
+
+.first-row {
+    width: 100%;
+    height: 40%;
+}
+
+.container-sign-up .first-row .top-col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    font-size: 200%;
+    font-weight: 700;
+}
+
+.first-row img {
+    width: 70px;
+    height: 70px;
+
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.form-container .second-row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container .second-row .middle-col {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .third-row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bottom-col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15%;
+    margin-top: 15%;
+    flex-direction: column;
+}
+
+.form-container .bottom-col .signUp-btn {
+    color: #ffff;
+    font-size: 130%;
+    width: 65%;
+    height: 25%;
+    border: none;
+    border-radius: 50px;
+    background-color: #9D4EDD;
+    cursor: pointer;
+}
+
+
+.text-sign-in {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 5px;
+    font-size: 19px;
+}
+
+.signIn-btn {
+    color: black;
+    flex-wrap: wrap;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.container-sign-up .form-container .error {
+    color: red;
+    align-self: baseline;
+    font-size: 110%;
+    
+}
