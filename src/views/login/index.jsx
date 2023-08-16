@@ -9,23 +9,21 @@ import * as yup from 'yup';
 import { useFormik } from "formik";
 
 
-function SignUp() {
+function SignIn() {
 
     const formik = useFormik({
         initialValues: {
-          nameCompleted: "",
-          email: "",
-          password: "",
+            email: "",
+            password: "",
         },
         validationSchema: yup.object({
-          nameCompleted: yup.string().required("required!").matches(/[A-Z]+/g, "name invalid."),
-          email: yup.string().required("required!").email("email invalid!"),
-          password: yup.string().required("required!").min(6, "6 to 10 characters.").max(10, "6 to 10 characters."),
+            email: yup.string().required("required!").email("email invalid!"),
+            password: yup.string().required("required!").min(6, "6 to 10 characters.").max(10, "6 to 10 characters."),
         }),
         // onSubmit: (values) => {
         //   alert(JSON.stringify(values, null, 2));
         // },
-      });
+    });
 
 
     return (
@@ -40,8 +38,8 @@ function SignUp() {
                 </Row>
 
                 <form className='form-container' onSubmit={formik.handleSubmit}>
-                    <Row className='second-row'>
-                        <Col className='middle-col'>
+                    <Row className='form-row'>
+                        <Col className='form-col'>
                             <TextField sx={{ m: 1, width: '100%' }}
                                 id="standard-required"
                                 name="nameCompleted"
@@ -83,22 +81,45 @@ function SignUp() {
                             {formik.errors.password && formik.touched.password ? (
                                 <div className='error'>{formik.errors.password}</div>
                             ) : null}
-                        </Col>
-                    </Row>
 
-                    <Row className='third-row'>
-                        <Col className='bottom-col'>
-                            <button className="signUp-btn" type="submit" onClick={() => { handleClick() }}>Create Account</button>
-                            <div className='text-sign-in'>already has an account?
-                                <div className='signIn-btn'>Sign in</div>
-                            </div>
+                            <TextField sx={{ m: 1, width: '100%' }}
+                                //id="standard-required"
+                                name="linkedin"
+                                label="Linkedin"
+                                variant="standard"
+                                helperText="optional"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.linkedin}
+                            />
+                            
+                            <TextField sx={{ m: 1, width: '100%' }}
+                                //id="standard-required"
+                                name="github"
+                                label="GitHub"
+                                variant="standard"
+                                helperText="optional"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.github}
+                            />
+                           
                         </Col>
                     </Row>
                 </form>
+                <Row className='third-row'>
+                    <Col className='bottom-col'>
+                        <button className="signUp-btn" type="submit" onClick={() => { handleClick() }}>Create Account</button>
+                        <div className='text-sign-in'>already has an account?
+                            <div className='signIn-btn'>Sign in</div>
+                        </div>
+                    </Col>
+                </Row>
+
             </Container>
         </Container >
 
     );
 }
 
-export default SignUp;
+export default SignIn;

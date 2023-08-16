@@ -5,14 +5,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("../../assets/login/login.png");
+    background-image: url("../../assets/login/background.jpeg");
 }
 
 .container-sign-up {
     width: 30%;
+    max-width: 42rem;
     height: 83%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: var(--branco);
@@ -32,14 +32,13 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
-    font-size: 200%;
+    font-size: 150%;
     font-weight: 700;
 }
 
 .first-row img {
-    width: 70px;
-    height: 70px;
-
+    width: 60px;
+    height: 60px;
 }
 
 .form-container {
@@ -49,10 +48,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
-.form-container .second-row {
+.form-container .form-row {
     width: 100%;
     height: 100%;
     display: flex;
@@ -60,7 +58,7 @@
     flex-direction: column;
 }
 
-.form-container .second-row .middle-col {
+.form-container .form-row .form-col {
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -68,28 +66,29 @@
     align-items: center;
 }
 
-.form-container .third-row {
+ .third-row {
     width: 100%;
-    height: 100%;
+    height: 40%;
     display: flex;
     align-items: center;
 }
 
-.bottom-col {
+.third-row .bottom-col {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
+    justify-content: baseline;
     gap: 15%;
-    margin-top: 15%;
     flex-direction: column;
 }
 
-.form-container .bottom-col .signUp-btn {
+.third-row .bottom-col .signUp-btn {
     color: var(--branco);
     font-size: 130%;
+    justify-items: end;
     width: 65%;
-    height: 25%;
+    height: 40%;
     border: none;
     border-radius: 50px;
     background-color:var(--roxo);
