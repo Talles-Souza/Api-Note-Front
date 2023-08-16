@@ -1,4 +1,4 @@
-.container-global {
+#container-global {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,10 +8,10 @@
     background-image: url("../../assets/register/background.jpeg");
 }
 
-.container-sign-up {
+#container-sign-in {
     width: 30%;
     max-width: 42rem;
-    height: 83%;
+    height: 70%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -19,12 +19,12 @@
     background-color: var(--branco);
 }
 
-.first-row {
+#first-row {
     width: 100%;
     height: 40%;
 }
 
-.container-sign-up .first-row .top-col {
+#container-sign-in #first-row #top-col {
     width: 100%;
     height: 100%;
     display: flex;
@@ -37,29 +37,31 @@
     font-weight: 700;
 }
 
-.first-row img {
+#first-row img {
     width: 20%;
     height: 40%;
 }
 
-.form-container {
+#form-container {
     width: 100%;
-    height: 100%;
+    min-height: 30%;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.form-container .form-row {
+#form-container #form-row {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    
 }
 
-.form-container .form-row .form-col {
+#form-container #form-row #form-col {
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -67,14 +69,14 @@
     align-items: center;
 }
 
- .third-row {
+ #third-row {
     width: 100%;
     height: 40%;
     display: flex;
     align-items: center;
 }
 
-.third-row .bottom-col {
+#third-row #bottom-col {
     width: 100%;
     height: 90%;
     display: flex;
@@ -84,12 +86,13 @@
     flex-direction: column;
 }
 
-.third-row .bottom-col .signUp-btn {
+#third-row #bottom-col #signIn-btn {
     color: var(--branco);
     font-size: 130%;
     justify-items: end;
     width: 65%;
-    height: 40%;
+    min-height: 30%;
+    max-height: 35%;
     border: none;
     border-radius: 50px;
     background-color:var(--roxo);
@@ -97,7 +100,7 @@
 }
 
 
-.text-sign-in {
+#text-sign-up {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -106,17 +109,9 @@
     font-size: 19px;
 }
 
-.signIn-btn {
+#signUp-btn {
     color: var(--preto);
     flex-wrap: wrap;
     font-weight: 600;
     cursor: pointer;
-}
-
-
-.container-sign-up .form-container .error {
-    color:var(--vermelho);
-    align-self: baseline;
-    font-size: 110%;
-    
 }
