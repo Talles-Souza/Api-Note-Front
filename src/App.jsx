@@ -6,7 +6,7 @@ import { darkTheme, lightTheme } from './utils/themeColors.js';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Root } from './routes/routes.jsx';
-
+import { AuthenticationProvider } from './service/context/Token.jsx';
 function App() {
 
   const savedDarkMode = localStorage.getItem("darkMode");
@@ -89,6 +89,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <AuthenticationProvider>
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -102,6 +103,7 @@ function App() {
         theme="light"
       />
       <Root />
+      </AuthenticationProvider>
     </ThemeProvider>
   )
 }
