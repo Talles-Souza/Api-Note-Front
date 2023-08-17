@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 import TextField from '@mui/material/TextField';
 import * as yup from 'yup';
 import { useFormik } from "formik";
+import { Register } from '../../service/api/register';
+import { toast } from 'react-toastify';
 
 
 function SignUp() {
@@ -15,23 +17,34 @@ function SignUp() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/login'); 
-      };
+        navigate('/login');
+    };
+
+    const handleRegister = async (e) => {
+
+        e.preventDefault();
+        const response = await Register(formik.values.nameCompleted, formik.values.email, formik.values.password, formik.values.linkedin, formik.values.github);
+        if (!response) {
+            toast.error
+        } else {
+            toast.success("Cadastro realizado com sucesso");
+            console.log("aqui")
+        }
+    }
 
     const formik = useFormik({
         initialValues: {
             nameCompleted: "",
             email: "",
             password: "",
+            linkedin: "",
+            github: ""
         },
         validationSchema: yup.object({
             nameCompleted: yup.string().required("required!").matches(/[A-Z]+/g, "name invalid."),
             email: yup.string().required("required!").email("email invalid!"),
             password: yup.string().required("required!").min(6, "6 to 10 characters.").max(10, "6 to 10 characters."),
         }),
-        // onSubmit: (values) => {
-        //   alert(JSON.stringify(values, null, 2));
-        // },
     });
 
 
@@ -101,7 +114,7 @@ function SignUp() {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.linkedin}
                             />
-                            
+
                             <TextField sx={{ m: 1, width: '100%' }}
                                 //id="standard-required"
                                 name="github"
@@ -112,15 +125,15 @@ function SignUp() {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.github}
                             />
-                           
+
                         </Col>
                     </Row>
                 </form>
                 <Row className='third-row'>
                     <Col className='bottom-col'>
-                        <button className="signUp-btn" type="submit" >Create Account</button>
+                        <button className="signUp-btn" type="submit" onClick={(e) => handleRegister(e)}>Create Account</button>
                         <div className='text-sign-in'>already has an account?
-                            <div className='signIn-btn'onClick={() => { handleClick() }}>Sign in</div>
+                            <div className='signIn-btn' onClick={() => { handleClick() }}>Sign in</div>
                         </div>
                     </Col>
                 </Row>
