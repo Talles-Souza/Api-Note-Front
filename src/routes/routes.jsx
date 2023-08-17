@@ -3,7 +3,8 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import SignUp from "../views/login";
+import SignUp from "../views/register";
+import SignIn from "../views/login"
 
 export function Root() {
 
@@ -13,6 +14,7 @@ export function Root() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<SignUp />} />
+                <Route path="/login" element={<SignIn/>} />
             </Routes>
         </BrowserRouter>
     );

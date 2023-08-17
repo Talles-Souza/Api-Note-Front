@@ -3,9 +3,11 @@ import SignUp from './views/login/index.jsx'
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './style/GlobalStyle.js';
 import { darkTheme, lightTheme } from './utils/themeColors.js';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import { Root } from './routes/routes.jsx';
-function App() {
 
+function App() {
 
   const savedDarkMode = localStorage.getItem("darkMode");
   const [darkMode, setDarkMode] = useState(savedDarkMode === "true");
@@ -87,6 +89,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Root />
     </ThemeProvider>
   )
