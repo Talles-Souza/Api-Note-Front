@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { useState } from "react";
+import { useState,useContext } from "react";
 import "../../../views/login/style.css"
 import TextField from '@mui/material/TextField';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useNavigate } from "react-router-dom";
-import {Login} from '../../../service/api/login';
+import { Login } from '../../../service/api/login';
 import { toast } from 'react-toastify';
-
+import { AuthenticationContext } from '../../../service/context/Token';
 function TextFieldLogin() {
 
     const [email, setEmail] = useState("");
@@ -15,18 +15,18 @@ function TextFieldLogin() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/');
+        navigate('/register');
     };
+    const { login, user, token } = useContext(AuthenticationContext);
 
-    const handleLogin = async (e) => {
-
-        e.preventDefault();
-        const response = await Login(email, passWord);
-        if (!response) {
-            toast.error
+    const handleLogin = async () => {
+        const respostaLogin = await login(email, passWord);
+        if (!respostaLogin) {
+            setLoadingButton(false)
         } else {
-            toast.success("Login realizado com sucesso");
+            navigate('/home');
         }
+
     }
 
     return (
@@ -39,22 +39,24 @@ function TextFieldLogin() {
                             id="standard-required"
                             name="email"
                             label="Email"
-                            variant="standard" 
-                            onChange={(e) => setEmail(e.target.value)}/>
+                            variant="standard"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
 
                         <TextField sx={{ m: 1, width: '100%' }}
                             id="standard-required"
                             name='passWord'
                             label="Password"
                             type="password"
-                            variant="standard" 
-                            onChange={(e) => setPassWord(e.target.value)}/>
+                            variant="standard"
+                            value={passWord}
+                            onChange={(e) => setPassWord(e.target.value)} />
                     </Col>
                 </Row>
             </form>
             <Row id='third-row'>
                 <Col id='bottom-col'>
-                    <button id="signIn-btn" type="submit" onClick={(e) => { handleLogin(e) }}>Enter</button>
+                    <button id="signIn-btn" type="submit" onClick={(e) => { handleLogin(e) }}>Login</button>
                     <div id='text-sign-up'>doesn't have an account?
                         <div id='signUp-btn' onClick={() => { handleClick() }}>Sign up</div>
                     </div>
