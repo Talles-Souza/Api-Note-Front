@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import "../../../views/login/style.css"
 import TextField from '@mui/material/TextField';
 import Row from 'react-bootstrap/Row';
@@ -8,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Login } from '../../../service/api/login';
 import { toast } from 'react-toastify';
 import { AuthenticationContext } from '../../../service/context/Token';
+
 function TextFieldLogin() {
 
     const [email, setEmail] = useState("");
@@ -23,10 +23,10 @@ function TextFieldLogin() {
         const respostaLogin = await login(email, passWord);
         if (!respostaLogin) {
             setLoadingButton(false)
+            toast.error("Não foi possivel realizar o login")
         } else {
             navigate('/home');
         }
-
     }
 
     return (
@@ -65,7 +65,6 @@ function TextFieldLogin() {
 
         </>
     );
-
 }
 
 export default TextFieldLogin
