@@ -6,6 +6,7 @@ import {
 import SignUp from "../views/register";
 import SignIn from "../views/login"
 import Home from "../views/home";
+import Profile from './../views/profile';
 
 export function Root() {
 
@@ -17,6 +18,7 @@ export function Root() {
                 <Route path="/register" element={<SignUp />} />
                 <Route path="/" element={<SignIn/>} />
                 <Route path="/home" element={<Home/>} />
+                <Route path="/settings/perfil" element={<Profile/>} />
             </Routes>
         </BrowserRouter>
     );

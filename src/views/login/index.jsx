@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn() {
 
     return (
-        <Container className='container-global'>
+        <Container fluid id='container-global'>
             <Container id='container-sign-in'>
                 <Row id='first-row'>
                     <Col id='top-col'>

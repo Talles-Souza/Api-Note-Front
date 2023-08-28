@@ -10,7 +10,7 @@ function Home() {
     const navigate = useNavigate();
 
     return (
-        <Container >
+        <Container fluid>
             <Navbar/>
         </Container>
     );

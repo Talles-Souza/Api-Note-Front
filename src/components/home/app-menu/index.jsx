@@ -13,6 +13,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
 
@@ -20,7 +22,7 @@ function Navbar() {
     const settings = ['Perfil', 'Preferencias', 'Lixeira', 'Logout'];
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);  
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -38,7 +40,7 @@ function Navbar() {
     };
 
     return (
-        <AppBar position="static" sx={{backgroundColor:"var(--roxo)"}}>
+        <AppBar position="static" sx={{ backgroundColor: "var(--roxo)" }}>
             <Container maxWidth="xl" >
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -151,7 +153,9 @@ function Navbar() {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Link to={`/settings/${setting.toLowerCase()}`}>
+                                        <Typography textAlign="center">{setting}</Typography>
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>
