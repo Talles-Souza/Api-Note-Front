@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './style.css'
 import { useNavigate } from "react-router-dom";
 import logo from '../../assets/register/logo.png';
@@ -50,9 +49,9 @@ function SignUp() {
 
     return (
 
-        <Container className='container-global'>
+        <Container fluid className='container-global'>
             <Container className='container-sign-up'>
-                <Row className='first-row'>
+                <Row className='first-row' >
                     <Col className='top-col'>
                         <img src={logo} alt="" />
                         Welcome

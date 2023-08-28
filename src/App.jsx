@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import SignUp from './views/login/index.jsx'
+import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './style/GlobalStyle.js';
 import { darkTheme, lightTheme } from './utils/themeColors.js';
@@ -7,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Root } from './routes/routes.jsx';
 import { AuthenticationProvider } from './service/context/Token.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
 
   const savedDarkMode = localStorage.getItem("darkMode");

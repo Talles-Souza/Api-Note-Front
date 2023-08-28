@@ -1,17 +1,17 @@
-import React from "react";
-import TextFieldLogin from "../../components/form/textField/index.jsx";
-import logo from '../../assets/register/logo.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import './style.css';
 import { Navigate, useNavigate } from "react-router-dom";
+import Navbar from '../../components/home/app-menu/index.jsx';
 
 function Home() {
+
     const navigate = useNavigate();
+
     return (
-        <Container >
-            oi
-            <button onClick={() => (navigate("/"))}>voltar</button>
+        <Container fluid>
+            <Navbar/>
         </Container>
     );
 }

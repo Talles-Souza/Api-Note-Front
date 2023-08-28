@@ -1,4 +1,3 @@
-import React from "react";
 import './style.css';
 import TextFieldLogin from "../../components/form/textField/index.jsx";
 import logo from '../../assets/register/logo.png';
@@ -9,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 function SignIn() {
 
     return (
-        <Container id='container-global'>
+        <Container fluid id='container-global'>
             <Container id='container-sign-in'>
                 <Row id='first-row'>
                     <Col id='top-col'>
@@ -17,7 +16,6 @@ function SignIn() {
                         Welcome
                     </Col>
                 </Row>
-
                 <TextFieldLogin />
             </Container>
         </Container>
