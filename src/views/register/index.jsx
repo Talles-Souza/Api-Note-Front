@@ -50,7 +50,7 @@ function SignUp() {
     return (
 
         <Container fluid className='container-global'>
-            <Container className='container-sign-up'>
+            <Container id='container-sign-up'>
                 <Row className='first-row' >
                     <Col className='top-col'>
                         <img src={logo} alt="" />

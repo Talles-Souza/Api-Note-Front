@@ -8,10 +8,10 @@
     background-image: url("../../assets/register/background.jpeg");
 }
 
-.container-sign-up {
-    width: 10%;
+#container-sign-up {
+    width: 45vh;
     max-width: 42rem;
-    height: 83%;
+    height: 88vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -52,7 +52,7 @@
 }
 
 .form-row {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;

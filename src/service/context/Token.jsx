@@ -16,7 +16,7 @@ export const AuthenticationProvider = ({ children }) => {
         github: "",
         linkedin: "",
         token: "",
-        date: ""
+        date: "" 
        
     });
     const [token, setToken] = useState('');

@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     --roxo: ${(props) => props.theme.colors.purple};
     --preto: ${(props) => props.theme.colors.black};
     --vermelho: ${(props) => props.theme.colors.red};
+    --lilás: ${(props) => props.theme.colors.violet};
   }
 `;
 export default GlobalStyle;
