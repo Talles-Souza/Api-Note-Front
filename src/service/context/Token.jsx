@@ -21,6 +21,17 @@ export const AuthenticationProvider = ({ children }) => {
     });
     const [token, setToken] = useState('');
     const [auth, setAuth] = useState(false);
+    const [check, setCheck] = useState('');
+    const [userGoogle, setUserGoogle] = useState({
+        id: "",
+        email: "",
+        name: "",
+        service: "",
+        sub: "",
+        picture: "",
+        token: "",
+        date: ""
+    });
    
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -94,9 +105,13 @@ export const AuthenticationProvider = ({ children }) => {
             login,
             logOut,
             user,
+            userGoogle,
+            setUserGoogle,
             isAuthenticated,
             auth,
             token,
+            check,
+            setCheck
 
         }}>
             {children}
